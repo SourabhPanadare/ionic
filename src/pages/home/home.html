@@ -1,0 +1,23 @@
+<ion-header class="slider closed">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar color="primary">
+            <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place" class="ionic-text"></ion-searchbar>
+          </ion-toolbar>
+          <ion-list [hidden]="autocompleteItems.length == 0">
+            <ion-item *ngFor="let item of autocompleteItems" tappable (click)="goButton()">
+              {{ item }}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-header>
+
+<ion-content>
+  <button ion-button icon-only class="menu" (click)="openNav();">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <div #map id="map"></div>
+</ion-content>
