@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class ListPage implements OnInit {
 
   books: any;
-  displayedColumns = ['isbn', 'title', 'image', 'description'];
 
   constructor(private api: RestApiService, public router: Router) {}
 
@@ -28,6 +27,8 @@ export class ListPage implements OnInit {
   
 
   showDetail(id) {
-    this.router.navigate(['/detail', JSON.stringify(id)]);
+    this.router.navigate(['/detail',id]);
+    
+    /*this.router.navigate(['/detail',JSON.stringify(id)]); Used When id returned is in int instead of string */
   }
 }

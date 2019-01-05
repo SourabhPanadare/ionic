@@ -10,8 +10,17 @@
 
 # Library Installation
 
-  $ sudo npm install -g corsproxy
-
   $ ionic g service rest-api, ionic g module material
 
   $ ionic g page detail, ionic g page edit, ionic g page create
+
+# Json Server Configuration For Testing
+
+  $ npm config set registry http://registry.npmjs.org/
+  $ npm config set strict-ssl false
+
+  $ sudo npm install -g json-server
+
+  json-server -v
+
+  json-server -p 4000 --watch db.json

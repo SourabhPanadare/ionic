@@ -5,15 +5,11 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, tap, map } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Methods':'POST, GET, OPTIONS, PUT'
-            })
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-/*const apiUrl = "assets/data.json";*/
-const apiUrl = 'http://angularbookkeeping.sourabhportfolio.in/api';
+const apiUrl = "http://localhost:4000/books";
+/*const apiUrl = 'http://angularbookkeeping.sourabhportfolio.in/api';*/
 
 @Injectable({
   providedIn: 'root'
