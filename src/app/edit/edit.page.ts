@@ -65,7 +65,7 @@ export class EditPage implements OnInit {
         }
       );
    }
- 
+
    bookDetails() {
     this.router.navigate(['/detail', this.id]);
    }
