@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Book New
+    </ion-title>
+    <ion-buttons slot="end">
+       <ion-button (click)="onFormSubmit(bookform.value)"><ion-icon name="md-cloud-done"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+       <ion-button (click)="bookDetails()"><ion-icon name="md-close"></ion-icon></ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="bookform">
+  <ion-item>
+    <ion-label position="floating">ISBN</ion-label>
+    <ion-input type="text" formControlName="isbn"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input type="text" formControlName="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Image</ion-label>
+    <ion-input type="text" formControlName="image"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Author</ion-label>
+    <ion-input type="text" formControlName="author"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea  formControlName="description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Published Year</ion-label>
+    <ion-input type="text" formControlName="published_year"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Publisher</ion-label>
+    <ion-input type="text" formControlName="publisher"></ion-input>
+  </ion-item>
+  <ion-item style="display:none;">
+    <ion-label position="stacked">Updated Date</ion-label>
+    <ion-input type="text" formControlName="updated_date" value="{{today | date}}"></ion-input>
+  </ion-item>
+</form>
+</ion-content>

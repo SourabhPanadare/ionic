@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Book Details
+    </ion-title>
+     <ion-buttons slot="end">
+      <ion-button routerLink="/edit/{{books.id}}"><ion-icon name="md-create"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteBook(books.id)"><ion-icon name="md-trash"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img src="assets/images/{{books.image}}"/>
+
+     <ion-card-content>
+      <ion-card-title margin-bottom>
+        {{books.title}}
+      </ion-card-title>
+      <p margin-bottom>
+        {{books.description}}
+      </p>
+
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col no-padding>
+            <b>ISBN:</b>
+            <p margin-bottom>{{books.isbn}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col no-padding>
+            <b>Author:</b>
+            <p margin-bottom>{{books.author}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col no-padding>
+            <b>Publisher:</b>
+            <p margin-bottom>{{books.publisher}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col no-padding>
+            <b>Publish Year:</b>
+            <p margin-bottom>{{books.published_year}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col no-padding>
+            <b>Update Date:</b>
+            <p margin-bottom>{{books.updated_date | date}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    
+  </ion-card>
+ 
+</ion-content>
